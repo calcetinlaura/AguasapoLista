@@ -1,0 +1,175 @@
+.privatePages {
+  margin: 0 2rem;
+}
+.navTabla {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box !important;
+}
+.buscador {
+  width: 60%;
+  padding: 0;
+  color: rgb(221, 89, 111);
+  box-sizing: border-box;
+}
+.buscador input {
+  width: 100%;
+  border: 1px solid rgb(221, 89, 111) !important;
+  padding: 1rem 0.5rem;
+}
+.buscador input::placeholder {
+  color: rgb(221, 89, 111) !important;
+}
+.buttonAdd {
+  border: 1px solid rgb(221, 89, 111) !important;
+  padding: 1rem 0.5rem;
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(221, 89, 111);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+.buttonAdd:hover {
+  background-color: rgb(250, 224, 224);
+}
+.buttonAdd .fas {
+  padding: 0 0.5rem 0 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.tablaAsistentes {
+  margin: 0 auto;
+  width: 100%;
+}
+.tablaAsistentes thead tr,
+.tablaAsistentes tbody tr {
+  text-align: center;
+  padding: 2% 0;
+  border: 1px solid gray !important;
+}
+.tablaAsistentes th {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgb(221, 89, 111);
+  padding: 1% 0;
+  color: rgb(221, 89, 111);
+}
+.tablaAsistentes tr td {
+  border-bottom: 1px solid rgb(221, 89, 111);
+  padding: 0.4rem 0.2rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(95, 91, 90);
+}
+.tablaAsistentes tbody tr:hover {
+  background-color: rgb(250, 224, 224);
+}
+.tablaAsistentes tbody tr td:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+.tablaAsistentes tbody tr td:nth-child(1),
+.tablaAsistentes tbody tr td:nth-child(2) {
+  text-align: left;
+}
+.tablaAsistentes tfoot tr td {
+  text-align: center;
+  background-color: rgb(250, 224, 224);
+}
+.tablaAsistentes tfoot tr td:nth-child(1) {
+  text-align: left;
+}
+.positivo {
+  background-color: rgb(178, 213, 125);
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+.aguasaper {
+  background-color: rgb(180, 235, 246);
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+.gratis {
+  background-color: rgb(251, 231, 99);
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+.negativo {
+  background-color: rgb(250, 224, 224);
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+button {
+  border: none !important;
+  background-color: transparent;
+}
+.fas {
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 1rem;
+  color: rgb(221, 89, 111);
+}
+.fas:hover {
+  cursor: pointer;
+  color: rgb(145, 51, 67);
+}
+.pagination {
+  width: 100%;
+  margin: 3rem 0;
+  padding: 0.5rem 0;
+  color: rgb(221, 89, 111);
+  border-top: 2px solid rgb(221, 89, 111);
+  text-align: center;
+}
+.page-controller {
+  padding: 0.5rem 0;
+  color: rgb(221, 89, 111);
+  font-size: 1.3rem;
+}
+.pagination select {
+  color: rgb(221, 89, 111);
+  border: 1px solid rgb(221, 89, 111);
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0;
+}
+.celdaGris {
+  display: inline-block;
+  background-color: rgb(250, 224, 224);
+  width: 100% !important;
+  height: 100%;
+}
+/*FORMULARIO*/
+
+.Active {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  /*le indicas que animacion quieres aplicarle, animacion hecha por ti en un keyframe*/
+  animation-name: fadeIn;
+  background-color: rgb(225, 225, 255);
+}
+.noActive {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.A
+/*KeyFrames*/
+/*La animacion hecha por ti, puedes ponerle cualquier nombre, solo es para identificarlo*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

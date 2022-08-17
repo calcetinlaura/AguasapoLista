@@ -1,0 +1,77 @@
+/*--FORMULARIO--*/
+.privatePages {
+  margin: 0 2rem;
+}
+h3 {
+  text-align: center;
+  color: rgb(144, 106, 10);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: "Urbanist", sans-serif;
+}
+.formLista {
+  text-align: center;
+}
+.formLista .asistenciaBox,
+.formLista .pagoBox,
+.formLista .personaBox {
+  display: block;
+  margin: 2% 1%;
+  padding: 1rem;
+  border: 1px solid rgb(236, 195, 90);
+  text-align: center;
+}
+.formLista .pagoBox div,
+.formLista .personaBox div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  box-sizing: border-box;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.formLista div label {
+  color: rgb(144, 106, 10);
+  font-size: 1rem;
+  text-align: left;
+}
+.formLista div label span {
+  color: rgb(144, 106, 10);
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.formLista div input,
+.formLista div select,
+.formLista div textarea {
+  background-color: rgb(241, 211, 134);
+  border: none;
+  font-family: "Urbanist", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+.formLista div input:focus-visible,
+.formLista div input:active,
+.formLista div input:focus,
+.formLista div textarea:focus-visible {
+  border-color: rgb(241, 211, 134) !important;
+}
+
+.buttonAceptar {
+  border: 1px solid rgb(144, 106, 10);
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: rgb(144, 106, 10);
+  padding: 1rem;
+  color: white;
+  border-radius: 5px;
+}
+.buttonAceptar:hover {
+  cursor: pointer;
+  border: 1px solid rgb(144, 106, 10);
+  background-color: transparent;
+  color: rgb(144, 106, 10);
+}

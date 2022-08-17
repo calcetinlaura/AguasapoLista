@@ -1,0 +1,384 @@
+/*--SECCIÓN TEXTO--*/
+.sectionText {
+  padding: 1rem 2rem;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+.sectionText_text {
+  height: auto;
+  max-height: 100%;
+}
+.sectionText p {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  text-align: justify;
+  margin: 0;
+  font-weight: 500;
+}
+
+.sectionText_button {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.sectionText_button_contact {
+  border: 1px solid rgb(157, 7, 59);
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: rgb(157, 7, 59);
+  padding: 1vh 2vw;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+}
+
+.sectionText_button_contact:hover {
+  cursor: pointer;
+  border: 1px solid rgb(157, 7, 59);
+  background-color: rgb(224, 190, 202);
+  color: rgb(157, 7, 59);
+}
+
+.sectionForm {
+  transition: opacity 0.5 ease-in-out;
+  opacity: 0;
+  height: 0;
+  align-self: center;
+  display: none;
+}
+
+.answerText {
+  color: rgb(157, 7, 59) !important;
+  font-size: 1.4rem !important;
+  margin: 0;
+  text-align: center !important;
+  font-weight: bold;
+}
+.answerText span {
+  font-weight: 400;
+}
+
+.agotadasTitulo {
+  color: rgb(240, 219, 219);
+  font-size: 1.4rem !important;
+  text-align: center !important;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.agotadasText {
+  color: rgb(240, 219, 219) !important;
+}
+.agotadasLine {
+  color: rgb(240, 219, 219) !important;
+  text-align: center !important;
+}
+/*--FORMULARIO--*/
+.sectionForm_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.formAguasaper {
+  padding: 2rem 0;
+}
+.formAguasaperTitle {
+  text-align: center;
+}
+.sectionForm_form_entradasAdultos,
+.sectionForm_form_entradasPubertos,
+.sectionForm_form_entradasPeques {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  box-sizing: border-box;
+}
+
+.sectionForm_form_name,
+.sectionForm_form_email,
+.sectionForm_form_direccion,
+.sectionForm_form_transporte,
+.sectionForm_form_dormir,
+.sectionForm_form_comment {
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  box-sizing: border-box;
+}
+.sectionForm_form_diaLlegada,
+.sectionForm_form_horaLlegada,
+.sectionForm_form_diaSalida,
+.sectionForm_form_horaSalida {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  box-sizing: border-box;
+}
+
+.sectionForm_form_texto,
+.sectionForm_form_submit {
+  grid-column: span 6;
+}
+
+.sectionForm_form div {
+  align-items: center;
+  height: auto;
+  line-height: 1.3;
+}
+
+.sectionForm_form div label {
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.1;
+}
+.sectionForm_form div label span {
+  font-size: 0.7rem;
+  text-align: left;
+}
+.sectionForm_form div {
+  text-align: left;
+}
+.sectionForm_form div input[type="text"],
+.sectionForm_form div input[type="email"],
+.sectionForm_form div input[type="number"],
+.sectionForm_form div input[type="date"],
+.sectionForm_form div input[type="time"],
+.sectionForm_form div textarea {
+  background-color: #f5b45e;
+  border: none;
+  padding: 0.5rem;
+  font-family: "Urbanist", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sectionForm_form div textarea {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sectionForm_form_texto p {
+  text-align: justify;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: rgb(38, 37, 37);
+  padding: 0.3rem 0;
+}
+
+.sectionForm_form_submit {
+  text-align: center !important;
+}
+.sectionForm_form_submit input {
+  border: 1px solid rgb(157, 7, 59);
+  background-color: rgb(157, 7, 59);
+  color: white;
+  padding: 1vh 2vw;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.sectionForm_form_submit input:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(157, 7, 59);
+}
+/*MEDIA QUERYS*/
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (max-width: 992px) {
+  /*--SECCIÓN TEXTO--*/
+  .sectionText {
+    padding: 1rem 2rem;
+  }
+  .sectionText p {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+
+  .sectionText_button_contact {
+    padding: 1vh 2vw;
+    font-size: 1rem;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+  }
+  .sectionForm {
+    transition: opacity 0.5 ease-in-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    align-self: center;
+  }
+  .answerText {
+    font-size: 1.2rem !important;
+  }
+  .answerText span {
+    font-weight: 400;
+  }
+  .agotadasTitulo {
+    color: rgb(240, 219, 219);
+    font-size: 1.4rem !important;
+    text-align: center !important;
+    font-weight: bold;
+  }
+  /*FORM*/
+  .sectionForm_form {
+    margin: 0;
+  }
+  .sectionForm_form_name,
+  .sectionForm_form_email,
+  .sectionForm_form_direccion,
+  .sectionForm_form_transporte,
+  .sectionForm_form_dormir,
+  .sectionForm_form_comment,
+  .sectionForm_form_diaLlegada,
+  .sectionForm_form_horaLlegada,
+  .sectionForm_form_diaSalida,
+  .sectionForm_form_horaSalida,
+  .sectionForm_form_entradasAdultos,
+  .sectionForm_form_entradasPubertos,
+  .sectionForm_form_entradasPeques {
+    grid-template-columns: 135px 1fr;
+  }
+  .sectionForm_form div label {
+    font-size: 1rem;
+    text-align: left;
+  }
+  .sectionForm_form_texto p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .sectionForm_form_submit input {
+    padding: 1vh 2vw;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /*--SECCIÓN TEXTO--*/
+
+  .sectionText p {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+
+  .sectionText_button_contact {
+    padding: 1vh 2vw;
+    font-size: 1rem;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+  }
+  .answerText {
+    font-size: 1.2rem !important;
+  }
+  .answerText span {
+    font-weight: 400;
+  }
+  .agotadasTitulo {
+    color: rgb(240, 219, 219);
+    font-size: 1.4rem !important;
+    text-align: center !important;
+    font-weight: bold;
+  }
+  /*FORM*/
+  .sectionForm_form {
+    display: block;
+    margin: 0;
+  }
+  .sectionForm_form_name,
+  .sectionForm_form_email,
+  .sectionForm_form_direccion,
+  .sectionForm_form_transporte,
+  .sectionForm_form_dormir,
+  .sectionForm_form_comment,
+  .sectionForm_form_diaLlegada,
+  .sectionForm_form_horaLlegada,
+  .sectionForm_form_diaSalida,
+  .sectionForm_form_horaSalida,
+  .sectionForm_form_entradasAdultos,
+  .sectionForm_form_entradasPubertos,
+  .sectionForm_form_entradasPeques {
+    grid-template-columns: 135px 1fr;
+    padding: 0 0 2rem 0;
+  }
+  .sectionForm_form_texto {
+    padding: 0 0 1rem 0;
+  }
+  .sectionForm_form div label {
+    font-size: 1rem;
+  }
+  .sectionForm_form_texto p {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+  .sectionForm_form_submit input {
+    padding: 1vh 2vw;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  /*FORM*/
+  .sectionForm_form {
+    margin: 0;
+  }
+  .sectionForm_form_name,
+  .sectionForm_form_email,
+  .sectionForm_form_direccion,
+  .sectionForm_form_transporte,
+  .sectionForm_form_dormir,
+  .sectionForm_form_comment,
+  .sectionForm_form_diaLlegada,
+  .sectionForm_form_horaLlegada,
+  .sectionForm_form_diaSalida,
+  .sectionForm_form_horaSalida,
+  .sectionForm_form_entradasAdultos,
+  .sectionForm_form_entradasPubertos,
+  .sectionForm_form_entradasPeques {
+    grid-template-columns: 90px 1fr;
+  }
+  .sectionForm_form div label {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .sectionForm_form_texto p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  .sectionForm_form_submit input {
+    padding: 1vh 2vw;
+    font-size: 0.7rem;
+  }
+}
+
+.answer {
+  transition: opacity 0.5 ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.noActive {
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+.Active {
+  padding: 0 0 0 0;
+  margin: 0;
+  opacity: 1;
+  height: auto;
+  max-height: 100%;
+  margin-bottom: 1rem;
+  align-self: center;
+  display: block;
+  box-sizing: border-box;
+}

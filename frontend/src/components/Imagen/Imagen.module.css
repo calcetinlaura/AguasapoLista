@@ -1,0 +1,31 @@
+.boxImagen {
+  flex-shrink: 0;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+  margin-top: -4%;
+}
+.playerAguasapo {
+  margin-top: -200px;
+}
+.imgProgramacion {
+  height: 100%;
+}
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (max-width: 992px) {
+  .playerAguasapo {
+    margin-top: 0px;
+  }
+  .imgProgramacion {
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 380px) {
+}
