@@ -6,6 +6,14 @@ const mysql = require("mysql");
 //const __filename = fileURLToPath(import.meta.url);
 //const __dirname = path.dirname(__filename);
 
+const {
+  getAllAsistentes,
+  getAsistenteById,
+  getAsistenteByName,
+  createAsistente,
+  updateAsistente,
+  deleteAsistente,
+} = require("./controllers/asistentesControllers");
 //CONEXIÓN BASE DE DATOS
 const db = mysql.createConnection({
   host: "hl1132.dinaserver.com",
@@ -19,91 +27,66 @@ db.connect(function (err) {
   }
   console.log("Conectado a la base de datos");
 });
-
-// RUTAS
-
-/**
- * Mira a ver que aquí estas importando unas funciones desde un fichero que esta vacío 🤒
- */
-const {
-  getAllAsistentes,
-  getAsistenteById,
-  getAsistenteByName,
-  createAsistente,
-  updateAsistente,
-  deleteAsistente,
-} = require("./controllers/asistentesControllers");
-
-
-const router = require("express").Router();
-
-router.get("/", function (req, res) {
-  try {
-    getAllAsistentes;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-router.get("/:id", function (req, res) {
-  try {
-    getAsistenteById;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-router.get("/:nombre", function (req, res) {
-  try {
-    getAsistenteByName;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-router.post("/", function (req, res) {
-  try {
-    createAsistente;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-router.put("/:id", function (req, res) {
-  try {
-    updateAsistente;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-router.delete("/:id", function (req, res) {
-  try {
-    deleteAsistente;
-  } catch (error) {
-    res.json({ message: error.message });
-  }
-});
-
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/concierto", router);
-
-//UNE EL BACK CON EL FRONTEND
 app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-/**
- * Cuando estamos en en el entorno de pruebas de react, el routing funciona bien
- * al escribir /lista en la barra de direcciones porque lo unico que esta tocando el routing es react-router.
- *
- * El problema viene, cuando pasamos la apliación a deployment. En este momento, las rutas de react-router solo funcionan
- * correctamente cuando viajamos usando una etiqueta de react router => <Link />. Si viajamos usando la barra de direcciones, el redireccionamiento
- * lo va a hacer node, por lo tanto, no encuentra la ruta lista. Sin embargo, con esta línea de aquí, todas las peticiones que se hagan que no
- * vayan a una ruta conocida nos va a redireccionar a index.html(nuestro frontend) y este si va a saber lo que hacer con esa ruta.
- */
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
-});
 
 app.listen(8000, () => {
   console.log("Server up running in http://localhost:8000/");
 });
+
+app.get("/lista", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
+});
+
+app.get("/asistentes", function (req, res) {
+  try {
+    db.query("SELECT * FROM conciertos", (err, result) => {
+      err ? response.send(err) : res.send(result);
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+
+//si no le pones el parentesis a las funciones, complicado que se ejecuten 🤠
+app.get("/:id", function (req, res) {
+  try {
+    getAsistenteById();
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+app.get("/:nombre", function (req, res) {
+  try {
+    getAsistenteByName();
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+app.post("/", function (req, res) {
+  try {
+    createAsistente();
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+app.put("/:id", function (req, res) {
+  try {
+    updateAsistente();
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+app.delete("/:id", function (req, res) {
+  try {
+    deleteAsistente();
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+
 module.exports = {
-  db
+  db,
 };

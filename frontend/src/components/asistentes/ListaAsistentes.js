@@ -12,11 +12,11 @@ import {
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 //const URI = 'https://aguasapo.es/asistentesConcierto/'
-const URI = "http://localhost:8000/concierto/";
+const URI = "http://localhost:8000/asistentes";
 const ListaAsistentes = () => {
   const getAsistentes = () => {
     axios.get(URI).then((response) => {
-      setData(response.data);
+      response.data.length > 0 && setData(response.data);
     });
   };
   const [data, setData] = useState([]);

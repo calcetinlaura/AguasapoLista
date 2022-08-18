@@ -2,7 +2,10 @@ const db = require("./../app");
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const asistenteModel = db.define('concierto', {
+  /**
+   * LA TABLA DE LA BASE DE DATOS SE LLAMABA CONCIERTOS, NO CONCIERTO¡¡¡¡¡¡¡ 😂
+   */
+  const asistenteModel = db.define("conciertos", {
     grupo: { type: DataTypes.STRING },
     nombre: { type: DataTypes.STRING },
     email: { type: DataTypes.STRING },
@@ -13,19 +16,18 @@ module.exports = (sequelize, DataTypes) => {
     pago: { type: DataTypes.STRING },
     pagoMetodo: { type: DataTypes.STRING },
     pagoPersona: { type: DataTypes.STRING },
-    asistencia: { type: DataTypes.STRING }
+    asistencia: { type: DataTypes.STRING },
   });
-  asistenteModel.findAll({ attributes: ['nombre'] })
-    .then(concierto => {
-      const resultados = JSON.stringify(concierto)
-      console.log(resultados)
+  asistenteModel
+    .findAll({ attributes: ["nombre"] })
+    .then((concierto) => {
+      const resultados = JSON.stringify(concierto);
+      return resultados;
     })
-    .catch(error => {
-      console.log("ERRORCITO")
-      console.log(error)
-    })
+    .catch((error) => {
+      console.log("ERRORCITO");
+      console.log(error);
+    });
 
-  return asistenteModel
-}
-
-
+  return asistenteModel;
+};

@@ -1,8 +1,12 @@
+const { response } = require("express");
+const { db } = require("../app");
 const asistenteModel = require("./../models/asistenteModel");
 
-const getAllAsistentes = async (req, res) => {
+const getAllAsistentes = (req, res) => {
   try {
-    const asistentes = await asistenteModel.findAll();
+    db.query("SELECT * FROM conciertos", (err, result) => {
+      err ? response.send(err) : res.send(result);
+    });
     res.json(asistentes);
   } catch (error) {
     res.json({ message: error.message });
@@ -81,5 +85,5 @@ module.exports = {
   getAsistenteByName,
   createAsistente,
   updateAsistente,
-  deleteAsistente
+  deleteAsistente,
 };
